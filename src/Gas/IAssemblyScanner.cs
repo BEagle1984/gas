@@ -5,7 +5,7 @@ namespace Gas
 {
     public interface IAssemblyScanner
     {
-          /// <summary>
+        /// <summary>
         /// Filters the types in the scanned assemblies according to the provided predicate and
         /// returns an <see cref="ITypeScanner"/> that can be used to perform an action for each <see cref="Type"/>.
         /// </summary>
@@ -22,7 +22,7 @@ namespace Gas
         /// <returns>An instance of <see cref="ITypeScanner"/> that can be used to perform an action on
         /// each <see cref="Type"/>.</returns>
         ITypeScanner ForEachTypeImplementing<T>();
-        
+
         /// <summary>
         /// Finds the types in the scanned assemblies that implement any of specified types
         /// and returns an <see cref="ITypeScanner"/> that can be used to perform an action for each <see cref="Type"/>.
@@ -40,7 +40,7 @@ namespace Gas
         /// <returns>An instance of <see cref="ITypeScanner"/> that can be used to perform an action on
         /// each <see cref="Type"/>.</returns>
         ITypeScanner ForEachTypeImplementing(IEnumerable<Type> types);
-        
+
         /// <summary>
         /// Filters the non-abstract classes in the scanned assemblies according to the provided predicate and
         /// returns an <see cref="ITypeScanner"/> that can be used to perform an action for each <see cref="Type"/>.
@@ -59,7 +59,7 @@ namespace Gas
         /// <returns>An instance of <see cref="ITypeScanner"/> that can be used to perform an action on
         /// each <see cref="Type"/>.</returns>
         ITypeScanner ForEachConcreteClassImplementing<T>();
-        
+
         /// <summary>
         /// Finds the non-abstract classes in the scanned assemblies that implement any of specified types
         /// and returns an <see cref="ITypeScanner"/> that can be used to perform an action for each <see cref="Type"/>.
