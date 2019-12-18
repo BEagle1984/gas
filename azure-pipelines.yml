@@ -1,0 +1,39 @@
+# ASP.NET Core
+# Build and test ASP.NET Core projects targeting .NET Core.
+# Add steps that run tests, create a NuGet package, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+  - master
+  - develop
+  - feature/*
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+  # Install .net core sdk
+  - task: UseDotNet@2
+    displayName: 'Install sdk 3.1.x'
+    inputs:
+      packageType: 'sdk'
+      version: '3.1.x'
+  # Build and test
+  - script: dotnet build Gas.sln --configuration $(buildConfiguration)
+    displayName: 'Build (dotnet build $(buildConfiguration))'
+  - script: dotnet test Gas.sln --logger trx --collect "Code coverage" -p:CollectCoverage=true -p:CoverletOutputFormat=cobertura -p:Exclude="[xunit.*]*"
+    displayName: 'Test: (dotnet test)'
+  # Publish results
+  - task: PublishTestResults@2
+    displayName: 'Publish test results'
+    inputs:
+      testRunner: VSTest
+      testResultsFiles: '**/*.trx'
+  - task: PublishCodeCoverageResults@1
+    displayName: 'Publish code coverage results'
+    inputs:
+      summaryFileLocation: $(System.DefaultWorkingDirectory)/**/coverage.cobertura.xml
+      codecoverageTool: cobertura

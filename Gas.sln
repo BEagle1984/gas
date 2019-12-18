@@ -12,6 +12,11 @@ EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gas.Tests.Types", "tests\Gas.Tests.Types\Gas.Tests.Types.csproj", "{11AB91F6-C5FD-4B0F-96E8-6627E2055497}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F3AA51D8-1EB1-439E-9A07-BBCE56CE7E3C}"
+ProjectSection(SolutionItems) = preProject
+	azure-pipelines.yml = azure-pipelines.yml
+EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
