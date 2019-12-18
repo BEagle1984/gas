@@ -3,6 +3,18 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
         <LangVersion>latest</LangVersion>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>Gas</PackageId>
+        <Title>Gas</Title>
+        <Authors>Sergio Aquilini</Authors>
+        <Description>A generic assembly scanner.</Description>
+        <Copyright>Copyright (c) 2019 Sergio Aquilini</Copyright>
+        <PackageProjectUrl>https://github.com/BEagle1984/gas/</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/BEagle1984/gas/</RepositoryUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageTags>assembly scanning scanner reflection types</PackageTags>
+        <Version>1.0.0</Version>
+        <Company></Company>
     </PropertyGroup>
 
 </Project>
