@@ -24,7 +24,7 @@ public class Startup
             .ForEachConcreteClassImplementing<IService>()
                 .ForEachImplementedInterface()
                 .Do((classType, interfaceType) => 
-                    services.AddScoped(typeof(interfaceType), typeof(classType)))
+                    services.AddScoped(interfaceType, classType))
             .ForEachConcreteClassImplementing<ITextParser>()
                 .Do(t => services.AddScoped(typeof(ITextParser), t));
     }
